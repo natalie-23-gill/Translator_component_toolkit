@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='TCT',
-    version='0.1.6',
+    version='0.3.0',
     packages=find_packages(),
     install_requires=[
         # List your library's dependencies here
@@ -15,6 +15,7 @@ setup(
         'numpy',
         'openai',
         'PyYAML',
+        'copy',
     ],
     entry_points={
         'console_scripts': [
