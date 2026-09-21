@@ -4,6 +4,13 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
+## [Unreleased]
+
+### Fixed
+- `translator_metakg.PLOVER_APIS` now points the six CATRAX Plover KPs at `https://multiomics.ci.transltr.io/`. The previous host, `multiomics.rtx.ai:9990`, no longer accepts connections, so these KPs were silently dropped from every query. The Multiomics KP query path changed from `/multiomics/query` to `/mokp/query`.
+- `translator_query.format_query_json` places `attribute_constraints` on edge `e00` instead of the `edges` dict. The old placement produced invalid TRAPI.
+- NodeNorm test fixtures updated for the current Babel release: the status payload no longer includes `babel_version`, `UMLS:C0004096` normalizes to `MONDO:0100470`, and `DRUGBANK:DB00083` is now its own preferred identifier with type `biolink:ChemicalEntity`.
+
 ## [0.3.0] - 2026-07-29
 
 ### Added

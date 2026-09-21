@@ -141,33 +141,33 @@ def add_new_API_for_query(APInames:dict[str, str], metaKG:pd.DataFrame, newAPIna
 PLOVER_APIS = [
     {
         "name": "CATRAX BigGIM DrugResponse Performance Phase KP - TRAPI 1.5.0",
-        "meta_kg_url": "https://multiomics.rtx.ai:9990/BigGIM_DrugResponse_PerformancePhase/meta_knowledge_graph",
-        "query_url": "https://multiomics.rtx.ai:9990/BigGIM_DrugResponse_PerformancePhase/query",
+        "meta_kg_url": "https://multiomics.ci.transltr.io/BigGIM_DrugResponse_PerformancePhase/meta_knowledge_graph",
+        "query_url": "https://multiomics.ci.transltr.io/BigGIM_DrugResponse_PerformancePhase/query",
     },
     {
         "name": "CATRAX Pharmacogenomics KP - TRAPI 1.5.0",
-        "meta_kg_url": "https://multiomics.rtx.ai:9990/PharmacogenomicsKG/meta_knowledge_graph",
-        "query_url": "https://multiomics.rtx.ai:9990/PharmacogenomicsKG/query",
+        "meta_kg_url": "https://multiomics.ci.transltr.io/PharmacogenomicsKG/meta_knowledge_graph",
+        "query_url": "https://multiomics.ci.transltr.io/PharmacogenomicsKG/query",
     },
     {
         "name": "Clinical Trials KP - TRAPI 1.5.0",
-        "meta_kg_url": "https://multiomics.rtx.ai:9990/ctkp/meta_knowledge_graph",
-        "query_url": "https://multiomics.rtx.ai:9990/ctkp/query",
+        "meta_kg_url": "https://multiomics.ci.transltr.io/ctkp/meta_knowledge_graph",
+        "query_url": "https://multiomics.ci.transltr.io/ctkp/query",
     },
     {
         "name": "Drug Approvals KP - TRAPI 1.5.0",
-        "meta_kg_url": "https://multiomics.rtx.ai:9990/dakp/meta_knowledge_graph",
-        "query_url": "https://multiomics.rtx.ai:9990/dakp/query",
+        "meta_kg_url": "https://multiomics.ci.transltr.io/dakp/meta_knowledge_graph",
+        "query_url": "https://multiomics.ci.transltr.io/dakp/query",
     },
     {
         "name": "Multiomics KP - TRAPI 1.5.0",
-        "meta_kg_url": "https://multiomics.rtx.ai:9990/mokp/meta_knowledge_graph",
-        "query_url": "https://multiomics.rtx.ai:9990/multiomics/query",
+        "meta_kg_url": "https://multiomics.ci.transltr.io/mokp/meta_knowledge_graph",
+        "query_url": "https://multiomics.ci.transltr.io/mokp/query",
     },
     {
         "name": "Microbiome KP - TRAPI 1.5.0",
-        "meta_kg_url": "https://multiomics.rtx.ai:9990/mbkp/meta_knowledge_graph",
-        "query_url": "https://multiomics.rtx.ai:9990/mbkp/query",
+        "meta_kg_url": "https://multiomics.ci.transltr.io/mbkp/meta_knowledge_graph",
+        "query_url": "https://multiomics.ci.transltr.io/mbkp/query",
     },
     {
         "name": "RTX KG2 - TRAPI 1.5.0",

@@ -117,7 +117,7 @@ def format_query_json(subject_ids:list[str],
         }
 
     if attribute_constraints is not None and len(attribute_constraints) > 0:
-        query_json_temp['message']['query_graph']['edges']['attribute_constraints'] = attribute_constraints
+        query_json_temp['message']['query_graph']['edges']['e00']['attribute_constraints'] = attribute_constraints
 
     if subject_ids is not None and len(subject_ids) > 0:
         query_json_temp["message"]["query_graph"]["nodes"]["n00"]["ids"] = subject_ids

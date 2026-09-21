@@ -2,6 +2,8 @@ import pandas as pd
 from unittest.mock import patch, MagicMock
 
 from TCT.translator_query import (
+    build_attribute_constraint,
+    format_query_json,
     get_translator_API_predicates,
     optimize_query_json,
     query_KP,
@@ -322,3 +324,32 @@ class TestParallelApiQuery:
         assert "e2" in result
         assert result["e1"]["subject"] == "A"
         assert result["e2"]["subject"] == "C"
+
+
+# ---------------------------------------------------------------------------
+# format_query_json tests
+# ---------------------------------------------------------------------------
+
+class TestFormatQueryJson:
+    """Tests for format_query_json constraint placement."""
+
+    def test_attribute_constraints_on_edge(self):
+        """Constraints belong on edge e00, not on the edges dict."""
+        constraints = [build_attribute_constraint("biolink:has_total", ">", 2)]
+        result = format_query_json(
+            ["NCBIGene:3845"],
+            None,
+            ["biolink:Gene"],
+            ["biolink:Gene"],
+            ["biolink:interacts_with"],
+            attribute_constraints=constraints,
+        )
+        edges = result["message"]["query_graph"]["edges"]
+        assert edges["e00"]["attribute_constraints"] == constraints
+        assert "attribute_constraints" not in edges
+
+    def test_no_constraints_leaves_edge_clean(self):
+        result = format_query_json(["NCBIGene:3845"], None, None, ["biolink:Gene"], ["biolink:related_to"])
+        edges = result["message"]["query_graph"]["edges"]
+        assert "attribute_constraints" not in edges["e00"]
+        assert "attribute_constraints" not in edges

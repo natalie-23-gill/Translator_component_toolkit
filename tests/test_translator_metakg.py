@@ -2,6 +2,7 @@ import pandas as pd
 from unittest.mock import patch, MagicMock
 
 from TCT.translator_metakg import (
+    PLOVER_APIS,
     find_link,
     get_KP_metadata,
     add_new_API_for_query,
@@ -188,6 +189,12 @@ class TestAddPloverAPI:
         ]
         for name in expected_plover_names:
             assert name in new_api_names
+
+    def test_registry_does_not_use_retired_host(self):
+        """multiomics.rtx.ai:9990 was retired; all CATRAX KPs live on the CI host."""
+        for entry in PLOVER_APIS:
+            for key in ("meta_kg_url", "query_url"):
+                assert "multiomics.rtx.ai" not in entry[key], entry["name"]
 
 
 # ---------------------------------------------------------------------------
